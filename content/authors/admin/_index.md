@@ -1,13 +1,10 @@
 ---
 # Display name
-title: 吳健雄
-
-# Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+title: Andrei Stanciulescu
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Andrei
+last_name: Stanciulescu
 
 # Status emoji
 status:
@@ -20,133 +17,83 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Graphics Programmer
 
 # Organizations/Affiliations to display in Biography blox
-organizations:
-  - name: OpenAI
-    url: https://openai.com/
+# organizations:
+#   - name: OpenAI
+#     url: https://openai.com/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'mailto:stanciulescuandrei99@gmail.com'
     label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
   - icon: brands/github
-    url: https://github.com/gcushen
+    url: https://github.com/StanciulescuAndrei
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/
-  - icon: academicons/orcid
-    url: https://orcid.org/
+    url: https://www.linkedin.com/in/stanciulescu-andrei/
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Computer Graphics
+  - Computational Geometry
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: MSc Computer Graphics and Virtual Reality
+    institution: Universitat Poltecnica de Catalunya - BarcelonaTech
+    date_start: 2022-09-01
+    date_end: 2024-10-24
     summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
+      Master's thesis on building Level-of-Detail representations for 3D Gaussian Splatting models without additional training.
+
+      Courses focused on:
+      - OpenGL graphics API
+      - Realistic shading
+      - Geometry processing
+      - Simulation and animation
+      - Linear algebra for graphics
     button:
       text: 'Read Thesis'
-      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+      url: 'http://hdl.handle.net/2117/420313'
+  - area: BEng Systems Engineering
+    institution: Politehnica University of Bucharest
+    date_start: 2018-09-01
+    date_end: 2022-07-31
     summary: |
-      GPA: 3.8/4.0
-
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.4/4.0
-      
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      Courses focused on:
+      - Mathematics
+      - Analog and digital electronics
+      - System identification and control
+      - Microcontrollers and data acquisition
 work:
-  - position: Director of Cloud Infrastructure
-    company_name: GenCoin
+  - position: Research Intern
+    company_name: National Institute of Informatics
     company_url: ''
     company_logo: ''
-    date_start: 2021-01-01
-    date_end: ''
-    summary: |2-
-      Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Backend Software Engineer
-    company_name: X
-    company_url: ''
-    company_logo: ''
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+    date_start: 2024-02-06
+    date_end: 2024-08-03
     summary: |
-      Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-
-# Skills
-# Add your own SVG icons to `assets/media/icons/`
-skills:
-  - name: Technical Skills
-    items:
-      - name: Python
-        description: ''
-        percent: 80
-        icon: code-bracket
-      - name: Data Science
-        description: ''
-        percent: 100
-        icon: chart-bar
-      - name: SQL
-        description: ''
-        percent: 40
-        icon: circle-stack
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Hiking
-        description: ''
-        percent: 60
-        icon: person-simple-walk
-      - name: Cats
-        description: ''
-        percent: 100
-        icon: cat
-      - name: Photography
-        description: ''
-        percent: 80
-        icon: camera
+      - Worked under the supervision of Prof. Akihiro Sugimoto on my Master’s thesis project
+      - Extended the rendering pipeline for 3D Gaussian Splatting to allow more efficient rendering
+      - Implemented traditional computer graphics techniques for splat rendering
+  - position: Research Intern
+    company_name: Universitat Politecnica de Catalunya
+    company_url: ''
+    company_logo: ''
+    date_start: 2022-12-01
+    date_end: 2024-01-31
+    summary: |
+      - Research project in collaboration with HP
+      - Geometry processing for high-precision 3D printers
+      - Implemented various functionalities, mostly focusing on the computation of mesh properties
 
 languages:
   - name: English
     percent: 100
-  - name: Chinese
-    percent: 75
-  - name: Portuguese
+  - name: Romanian
+    percent: 100
+  - name: Spanish
     percent: 25
 
 # Awards.
