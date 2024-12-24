@@ -40,7 +40,7 @@ sections:
         exclude_featured: false
     design:
       view: citation
-  - block: projects
+  - block: collection
     content:
       title: Featured Projects
       text: ""
