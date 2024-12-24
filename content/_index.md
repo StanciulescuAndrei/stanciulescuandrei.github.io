@@ -40,4 +40,14 @@ sections:
         exclude_featured: false
     design:
       view: citation
+  - block: projects
+    content:
+      title: Featured Projects
+      text: ""
+      filters:
+        folders:
+          - project
+        exclude_featured: false
+    design:
+      view: showcase
 ---
