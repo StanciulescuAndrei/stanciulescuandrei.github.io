@@ -1,16 +1,15 @@
 ---
-title: "An example journal article"
+title: "Decision Support System for Liver Lesion Segmentation Based on Advanced Convolutional Neural Network Architectures "
 authors:
-- admin
-- Robert Ford
+- Popescu Dan
+- admin 
+- Pomohaci Mihai Dan 
+- Ichim Loretta
 author_notes:
-- "Equal contribution"
-- "Equal contribution"
-date: "2015-09-01T00:00:00Z"
-doi: ""
 
-# Schedule page publish date (NOT publication's date).
-publishDate: "2017-01-01T00:00:00Z"
+date: "2022-09"
+doi: "10.3390/bioengineering9090467"
+
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
@@ -18,13 +17,10 @@ publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["article-journal"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Journal of Source Themes, 1*(1)"
+publication: "MDPI Bioengineering"
 publication_short: ""
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
-
-# Summary. An optional shortened abstract.
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+abstract: Given its essential role in body functions, liver cancer is the third most common cause of death from cancer, despite being the sixth most common type of cancer worldwide. Following advancements in medicine and image processing, medical image segmentation methods are receiving a great deal of attention. As a novelty, the paper proposes an intelligent decision system for segmenting liver and hepatic tumors by integrating four efficient neural networks (ResNet152, ResNeXt101, DenseNet201, and InceptionV3). Images from computed tomography for training, validation, and testing were taken from the public LiTS17 database and preprocessed to better highlight liver tissue and tumors. Global segmentation is done by separately training individual classifiers and the global system of merging individual decisions. For the aforementioned application, classification neural networks have been modified for semantic segmentation. After segmentation based on the neural network system, the images were postprocessed to eliminate artifacts. The segmentation results obtained by the system were better, from the point of view of the Dice coefficient, than those obtained by the individual networks, and comparable with those reported in recent works.
 
 tags:
 - Source Themes
@@ -33,14 +29,7 @@ featured: false
 # links:
 # - name: ""
 #   url: ""
-url_pdf: http://arxiv.org/pdf/1512.04133v1
-url_code: 'https://github.com/HugoBlox/hugo-blox-builder'
-url_dataset: ''
-url_poster: ''
-url_project: ''
-url_slides: ''
-url_source: ''
-url_video: ''
+url_pdf: https://www.mdpi.com/2306-5354/9/9/467
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
@@ -48,28 +37,4 @@ image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
   focal_point: ""
   preview_only: false
-
-# Associated Projects (optional).
-#   Associate this publication with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `internal-project` references `content/project/internal-project/index.md`.
-#   Otherwise, set `projects: []`.
-projects: []
-
-# Slides (optional).
-#   Associate this publication with Markdown slides.
-#   Simply enter your slide deck's filename without extension.
-#   E.g. `slides: "example"` references `content/slides/example/index.md`.
-#   Otherwise, set `slides: ""`.
-slides: example
 ---
-
-{{% callout note %}}
-Click the *Cite* button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /callout %}}
-
-{{% callout note %}}
-Create your slides in Markdown - click the *Slides* button to check out the example.
-{{% /callout %}}
-
-Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/).

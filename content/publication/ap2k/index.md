@@ -1,5 +1,5 @@
 ---
-title: "An example journal article"
+title: "Multi-Energy and Fast-Convergence Iterative Reconstruction Algorithm for Organic Material Identification Using X-ray Computed Tomography "
 authors:
 - Iovea Mihai
 - admin
@@ -42,3 +42,4 @@ image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
   focal_point: ""
   preview_only: false
+---
