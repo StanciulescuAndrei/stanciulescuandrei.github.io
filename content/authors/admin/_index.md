@@ -45,6 +45,7 @@ education:
     institution: Universitat Poltecnica de Catalunya - BarcelonaTech
     date_start: 2022-09-01
     date_end: 2024-10-24
+    logo: 'upc.png'
     summary: |
       Master's thesis on building Level-of-Detail representations for 3D Gaussian Splatting models without additional training.
 
@@ -61,6 +62,7 @@ education:
     institution: Politehnica University of Bucharest
     date_start: 2018-09-01
     date_end: 2022-07-31
+    logo: 'upc.png'
     summary: |
       Courses focused on:
       - Mathematics
@@ -71,7 +73,7 @@ work:
   - position: Research Intern
     company_name: National Institute of Informatics
     company_url: ''
-    company_logo: ''
+    company_logo: 'nii.png'
     date_start: 2024-02-06
     date_end: 2024-08-03
     summary: |
@@ -81,7 +83,7 @@ work:
   - position: Research Intern
     company_name: Universitat Politecnica de Catalunya
     company_url: ''
-    company_logo: ''
+    company_logo: 'upc.png'
     date_start: 2022-12-01
     date_end: 2024-01-31
     summary: |
@@ -91,7 +93,7 @@ work:
   - position: C++ Developer - X-Ray Imaging
     company_name: Accent Pro 2000
     company_url: ''
-    company_logo: ''
+    company_logo: 'ap2k-logo.png'
     date_start: 2018-10-01
     date_end: 2022-07-31
     summary: |
