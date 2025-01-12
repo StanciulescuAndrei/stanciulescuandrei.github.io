@@ -39,7 +39,9 @@ sections:
           - project
         exclude_featured: false
     design:
-      view: compact
+      view: article-grid
+      fill_image: false
+      columns: 2
   - block: collection
     content:
       title: Recent Publications

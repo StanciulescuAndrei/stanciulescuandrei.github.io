@@ -2,7 +2,6 @@
 title: 3D Gaussian Splatting Level-of-Detail
 date: 2024-08-02
 external_link: https://github.com/StanciulescuAndrei/AccelerateGS
----
 
 This project constitutes my master's thesis for the program Master's in Innovation and Research in Informatics, Computer Graphics, and Virtual Reality specialization at Universitat Politecnica de Catalunya. It was developed during a research stay at the National Institute of Informatics, Tokyo, under the supervision of prof. Akihiro Sugimoto.
 
@@ -11,5 +10,6 @@ The main purpose of the project was to develop a method to accelerate the render
 A Complete description of the development process, methodology and results can be found in the [complete thesis](http://hdl.handle.net/2117/420313), which is published on the university library website.
 
 Lastly, this project is mainly based on the reference implementation of the [3D Gaussian Splatting method](https://github.com/graphdeco-inria/gaussian-splatting) and the [Hierarchical 3D Gaussian Representation](https://github.com/graphdeco-inria/hierarchical-3d-gaussians) for figuring out the maths behind the gaussian merging. These sources and many others are of course properly cited in the published thesis.
+---
 
 <!--more-->
