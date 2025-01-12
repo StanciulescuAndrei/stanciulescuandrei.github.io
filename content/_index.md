@@ -39,7 +39,7 @@ sections:
           - project
         exclude_featured: false
     design:
-      view: showcase
+      view: compact
   - block: collection
     content:
       title: Recent Publications
