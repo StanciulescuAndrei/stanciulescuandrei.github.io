@@ -11,13 +11,13 @@ design:
 sections:
   - block: collection
     content:
-      title: Selected Projects
-      text: I enjoy making things. Here are a selection of projects that I have worked on over the years.
+      title: Project Highlights
+      text: Here is a list of relevant projects I worked on to advance and showcase my knowledge in computer graphics and related areas.
       filters:
         folders:
           - project
     design:
       view: article-grid
       fill_image: false
-      columns: 3
+      columns: 2
 ---

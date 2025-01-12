@@ -98,13 +98,6 @@ work:
       - Worked on solving inverse problems in 3D X-ray tomography using CUDA and VTK
       - Developed numerical simulations in C++ to validate detector geometry
       - Developed a complete material identification pipeline, from sensor data acquisition to determining material properties
-languages:
-  - name: English
-    percent: 100
-  - name: Romanian
-    percent: 100
-  - name: Spanish
-    percent: 25
 
 ---
 
