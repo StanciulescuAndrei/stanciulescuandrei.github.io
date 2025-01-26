@@ -33,7 +33,6 @@ url_pdf: https://www.mdpi.com/2306-5354/9/9/467
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
   focal_point: ""
   preview_only: false
 ---
