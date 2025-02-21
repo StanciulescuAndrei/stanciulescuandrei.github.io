@@ -10,11 +10,7 @@ work on a proof-of-concept for this idea.
 
 [GitHub project repo](https://github.com/StanciulescuAndrei/NeRFCTRec)
 
-The structure of the model is verly similar to NeRF, however I chose to go with fewer hidden layers as there is less information to be represented.
-For CT scanning, we are only interested in the density at a given point. There is no color information and the density does not change based on the viewing direction.
+I used `astra-toolbox` to generate the scanning setup positions and compute the forward projections for the sinogram. Then I implemented a basic NeRF model which first learns the scene from the given sinogram, then I perform a structured sampling to evaluate the learned density field. From this basic implementation, I then introduced neural hash grids for faster training and inference, which also improved the model performance, and TV regularization for noise removal. Evaluating against traditional methods for CT reconstruction, my implementation performs well but falls behind significantly in terms of processing time, and in terms of image quality when compared to the better algebraic iterative algorithms. More details on the GithHub page.
 
-Also, when working with data from X-Ray sensors, the value represents the integral of density along the ray through the volume (of course after some processing steps which are not necessary with the setup I am using for this). This is also less complex than the volumetric rendering typically used in NeRFs. For each ray, we can sample the model at a given set of points and integrate the values knowing the densities and the distance between samples. When the sinogram is complete, the error is computed as the L2 distance between the original sinogram and the sinogram from the current iteration. 
-
-Finally, when the model is fitted, we want to extract the densities inside the model. This is different from NeRF, where you usually generate a rendering from a novel camera position. In this case, we want to perform a structured sampling of the model at the desired resolution to view the distribution of densities inside the sample. Because it is a continous model, we can theoretically obtain any resolution we want by sampling coarser or finer, but of course the quality of the information will depend a lot on the number of initial projections, their positioning and the quality of the fit.
-
+![rec gif](ct.gif)
 <!--more-->
