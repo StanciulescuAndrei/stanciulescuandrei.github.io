@@ -22,6 +22,13 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: Computer Vision Software Engineer
+          company: dotLumen
+          company_url: ''
+          location: Cluj-Napoca, Romania
+          date_start: '2025-04-24'
+          date_end: ''
+          summary: |2-
         - title: Research Intern
           company: National Institute of Informatics
           company_url: ''
