@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Academic publications by Andrei Stanciulescu">
+    <title>Publications | Andrei Stanciulescu</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/artistic.css">
+</head>
+<body class="grain" data-page="publications">
+    <!-- Navigation (injected by components.js) -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Page Header -->
+    <header class="page-header" style="padding-top: calc(var(--space-2xl) + 60px);">
+        <div class="container">
+            <p class="brutalist-subtitle mb-md">Academic Work</p>
+            <h1 class="page-header__title brutalist-title">Publications</h1>
+            <p class="page-header__subtitle">
+                Research papers and theses in computer graphics, medical imaging, and neural rendering.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="section section--large">
+            <div class="container container--narrow">
+                
+                <!-- Thesis Section -->
+                <div class="mb-xl">
+                    <h2 class="mb-lg" style="border-bottom: var(--border-heavy); padding-bottom: var(--space-md);">
+                        Theses
+                    </h2>
+                    
+                    <article class="pub-item">
+                        <span class="pub-item__type">Master's Thesis</span>
+                        <h3 class="pub-item__title">Accelerating 3D Gaussian Splat Rendering</h3>
+                        <p class="pub-item__authors"><strong>Andrei Stanciulescu</strong></p>
+                        <p class="pub-item__venue">Universitat Politècnica de Catalunya • October 2024</p>
+                        <p style="color: var(--color-muted); font-size: 0.95rem; margin-bottom: var(--space-md);">
+                            The 3D Gaussian Splatting method for 3D environment reconstruction from images brought 
+                            significant advancements to photorealistic novel-view synthesis. It combines the advantages 
+                            of primitive-based rendering with a differentiable renderer, thus obtaining state-of-the-art 
+                            image quality and surpassing neural methods for scene representation in optimization and 
+                            rendering speed. This project presents a method for accelerating 3DGS rendering through a 
+                            hierarchical Level of Detail structure that combines a regular octree subdivision with 
+                            feature-based primitive clustering.
+                        </p>
+                        <div class="pub-item__links">
+                            <a href="http://hdl.handle.net/2117/420313" class="btn btn--small" target="_blank" rel="noopener">
+                                Read PDF →
+                            </a>
+                            <a href="https://github.com/StanciulescuAndrei/AccelerateGS" class="btn btn--small" target="_blank" rel="noopener">
+                                Code →
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="pub-item">
+                        <span class="pub-item__type">Bachelor's Thesis</span>
+                        <h3 class="pub-item__title">Decision Support System for Liver Lesion Segmentation Based on Advanced Convolutional Neural Network Architectures</h3>
+                        <p class="pub-item__authors">Popescu Dan, <strong>Andrei Stanciulescu</strong>, Pomohaci Mihai Dan, Ichim Loretta</p>
+                        <p class="pub-item__venue">MDPI Bioengineering • September 2022</p>
+                        <p style="color: var(--color-muted); font-size: 0.95rem; margin-bottom: var(--space-md);">
+                            An intelligent decision system for segmenting liver and hepatic tumors by integrating four 
+                            efficient neural networks (ResNet152, ResNeXt101, DenseNet201, and InceptionV3). Images from 
+                            computed tomography for training, validation, and testing were taken from the public LiTS17 
+                            database and preprocessed to better highlight liver tissue and tumors.
+                        </p>
+                        <div class="pub-item__links">
+                            <a href="https://www.mdpi.com/2306-5354/9/9/467" class="btn btn--small" target="_blank" rel="noopener">
+                                Read PDF →
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Journal Articles Section -->
+                <div class="mb-xl">
+                    <h2 class="mb-lg" style="border-bottom: var(--border-heavy); padding-bottom: var(--space-md);">
+                        Journal Articles
+                    </h2>
+                    
+                    <article class="pub-item">
+                        <span class="pub-item__type">Article</span>
+                        <h3 class="pub-item__title">Multi-Energy and Fast-Convergence Iterative Reconstruction Algorithm for Organic Material Identification Using X-ray Computed Tomography</h3>
+                        <p class="pub-item__authors">Iovea Mihai, <strong>Andrei Stanciulescu</strong>, Hermann Edward, Neagu Marian, Duliu Octavian G.</p>
+                        <p class="pub-item__venue">MDPI Materials • February 2023</p>
+                        <p style="color: var(--color-muted); font-size: 0.95rem; margin-bottom: var(--space-md);">
+                            A specialized multi-stage procedure based on a multi-energy computed tomography investigation 
+                            within the 20–160 keV domain. The procedure consists of compensation for beam hardening and 
+                            other non-linear effects, a 3D fast reconstruction algorithm, and algorithms for simultaneous 
+                            determination of the density and effective atomic number. This enabled determining both values 
+                            in approximately 24 seconds with accuracy and precision of less than 3%.
+                        </p>
+                        <div class="pub-item__links">
+                            <a href="https://www.mdpi.com/1996-1944/16/4/1654" class="btn btn--small" target="_blank" rel="noopener">
+                                Read PDF →
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <!-- Decorative Section -->
+    <section class="art-block art-block--dark section">
+        <div class="container text-center">
+            <p class="brutalist-subtitle mb-md" style="color: var(--color-accent);">Research Interests</p>
+            <h2 class="mb-lg">Areas of Focus</h2>
+            <div class="flex flex--center flex--wrap flex--gap-lg">
+                <span class="tag" style="border-color: var(--color-text-light); color: var(--color-text-light); font-size: 1rem; padding: var(--space-md) var(--space-lg);">
+                    Computer Graphics
+                </span>
+                <span class="tag" style="border-color: var(--color-text-light); color: var(--color-text-light); font-size: 1rem; padding: var(--space-md) var(--space-lg);">
+                    Neural Rendering
+                </span>
+                <span class="tag" style="border-color: var(--color-text-light); color: var(--color-text-light); font-size: 1rem; padding: var(--space-md) var(--space-lg);">
+                    Medical Imaging
+                </span>
+                <span class="tag" style="border-color: var(--color-text-light); color: var(--color-text-light); font-size: 1rem; padding: var(--space-md) var(--space-lg);">
+                    3D Reconstruction
+                </span>
+                <span class="tag" style="border-color: var(--color-text-light); color: var(--color-text-light); font-size: 1rem; padding: var(--space-md) var(--space-lg);">
+                    GPGPU
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (injected by components.js) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    
+    <!-- Shared Components -->
+    <script src="js/components.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        // Circle cursor
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            // Check if over dark surface
+            const elementBelow = document.elementFromPoint(e.clientX, e.clientY);
+            if (elementBelow) {
+                const isDark = elementBelow.closest('.art-block--dark, .hero, [style*="background-color: var(--color-bg-dark)"], [style*="background: var(--color-bg-dark)"], [style*="#1a1a1a"], [style*="black"]');
+                cursor.classList.toggle('cursor--light', !!isDark);
+            }
+        });
+        
+        document.querySelectorAll('a, button, .card, .btn').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor--hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor--hover'));
+        });
+    </script>
+</body>
+</html>

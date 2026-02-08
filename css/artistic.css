@@ -1,0 +1,376 @@
+/* ===========================================
+   ARTISTIC STYLES - Brutalist & artistic elements
+   =========================================== */
+
+/* ========== Brutalist Typography ========== */
+.brutalist-title {
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+}
+
+.brutalist-title--stroke {
+    -webkit-text-stroke: 3px var(--color-text);
+    color: transparent;
+}
+
+.brutalist-title--mixed span:nth-child(odd) {
+    -webkit-text-stroke: 2px var(--color-text);
+    color: transparent;
+}
+
+.brutalist-subtitle {
+    font-family: var(--font-mono);
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+/* ========== Artistic Blocks ========== */
+.art-block {
+    position: relative;
+    padding: var(--space-xl);
+    background-color: var(--color-bg);
+}
+
+.art-block--bordered {
+    border: var(--border-heavy);
+}
+
+.art-block--accent {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+}
+
+.art-block--dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+}
+
+/* Offset shadow effect */
+.art-block--shadow {
+    position: relative;
+}
+
+.art-block--shadow::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+    background-color: var(--color-border);
+    z-index: -1;
+}
+
+/* ========== Geometric Decorations ========== */
+.geo-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: var(--border-heavy);
+}
+
+.geo-circle--filled {
+    background-color: var(--color-accent);
+    border: none;
+}
+
+.geo-square {
+    width: 100px;
+    height: 100px;
+    border: var(--border-heavy);
+}
+
+.geo-square--rotated {
+    transform: rotate(45deg);
+}
+
+/* ========== Marquee/Scrolling Text ========== */
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: var(--border-thick);
+    border-bottom: var(--border-thick);
+    padding: var(--space-md) 0;
+}
+
+.marquee__content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee__content span {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: var(--space-xl);
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* ========== Split Section ========== */
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+}
+
+.split__left,
+.split__right {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.split__left {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+}
+
+.split__right {
+    background-color: var(--color-bg);
+}
+
+/* ========== Stacked Text Effect ========== */
+.stacked-text {
+    position: relative;
+    display: inline-block;
+}
+
+.stacked-text::before,
+.stacked-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.stacked-text::before {
+    color: var(--color-accent);
+    transform: translate(-4px, -4px);
+    z-index: -1;
+}
+
+.stacked-text::after {
+    color: var(--color-accent-secondary);
+    transform: translate(4px, 4px);
+    z-index: -2;
+}
+
+/* ========== Glitch Effect ========== */
+.glitch {
+    position: relative;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--color-accent);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--color-accent-secondary);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(31px, 9999px, 94px, 0); }
+    20% { clip: rect(62px, 9999px, 42px, 0); }
+    40% { clip: rect(16px, 9999px, 78px, 0); }
+    60% { clip: rect(83px, 9999px, 28px, 0); }
+    80% { clip: rect(9px, 9999px, 66px, 0); }
+    100% { clip: rect(47px, 9999px, 55px, 0); }
+}
+
+@keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 19px, 0); }
+    20% { clip: rect(23px, 9999px, 87px, 0); }
+    40% { clip: rect(54px, 9999px, 31px, 0); }
+    60% { clip: rect(11px, 9999px, 72px, 0); }
+    80% { clip: rect(89px, 9999px, 43px, 0); }
+    100% { clip: rect(36px, 9999px, 95px, 0); }
+}
+
+@keyframes glitch-skew {
+    0% { transform: skew(0deg); }
+    50% { transform: skew(0.5deg); }
+    100% { transform: skew(-0.5deg); }
+}
+
+/* ========== Artistic Gallery ========== */
+.art-gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-md);
+}
+
+.art-gallery__item {
+    position: relative;
+    overflow: hidden;
+    border: var(--border-thick);
+}
+
+.art-gallery__item--wide {
+    grid-column: span 8;
+    aspect-ratio: 16 / 9;
+}
+
+.art-gallery__item--narrow {
+    grid-column: span 4;
+}
+
+.art-gallery__item--tall {
+    grid-row: span 2;
+    aspect-ratio: 9 / 16;
+}
+
+.art-gallery__item--square {
+    grid-column: span 3;
+    aspect-ratio: 1 / 1;
+}
+
+.art-gallery__item--square > div:first-child {
+    min-height: 100% !important;
+}
+
+/* Video styling for gallery items */
+.art-gallery__item video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #000;
+}
+
+.art-gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-medium);
+}
+
+.art-gallery__item:hover .art-gallery__image {
+    transform: scale(1.05);
+}
+
+.art-gallery__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-lg);
+    opacity: 0;
+    transition: var(--transition-medium);
+    pointer-events: none;
+}
+
+.art-gallery__item:hover .art-gallery__overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.art-gallery__title {
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+}
+
+.art-gallery__category {
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+/* ========== Rotating Border ========== */
+.rotating-border {
+    position: relative;
+    padding: 4px;
+    background: conic-gradient(
+        var(--color-accent),
+        var(--color-accent-secondary),
+        var(--color-accent)
+    );
+    animation: rotate-border 4s linear infinite;
+}
+
+.rotating-border::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background-color: var(--color-bg);
+}
+
+@keyframes rotate-border {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+/* ========== Noise/Grain Overlay ========== */
+.grain::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.03;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 1024px) {
+    .split {
+        grid-template-columns: 1fr;
+    }
+    
+    .split__left,
+    .split__right {
+        min-height: 50vh;
+    }
+    
+    .art-gallery__item--wide,
+    .art-gallery__item--narrow,
+    .art-gallery__item--square {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 768px) {
+    .art-gallery__item--wide,
+    .art-gallery__item--narrow,
+    .art-gallery__item--square {
+        grid-column: span 12;
+    }
+    
+    .marquee__content span {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artistic and creative projects by Andrei Stanciulescu">
+    <title>Artistic | Andrei Stanciulescu</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/artistic.css">
+</head>
+<body class="grain" data-page="artistic">
+    <!-- Navigation (injected by components.js) -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <header class="hero hero--half" style="background-color: var(--color-bg-dark); color: var(--color-text-light);">
+        <div class="container">
+            <p class="brutalist-subtitle mb-md" style="color: var(--color-accent);">Creative Expression</p>
+            <h1 class="brutalist-title glitch" data-text="Artistic">Artistic</h1>
+            <p class="page-header__subtitle mt-lg" style="color: var(--color-muted); max-width: 600px;">
+                Where technical skills meet creative vision. This space showcases experiments 
+                in algorithmic visuals, sound design, and artistic applications of programming.        
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Gallery Section -->
+        <section class="section section--large">
+            <div class="container">
+                <h2 class="mb-xl">Gallery</h2>
+                
+                <div class="art-gallery">
+                    <!-- Project 1 - Wide -->
+                    <article class="art-gallery__item art-gallery__item--wide" id="project-1">
+                        <div style="background: linear-gradient(135deg, #1a1a1a 0%, #333 50%, #1a1a1a 100%); width: 100%; height: 100%; min-height: 300px; display: flex; align-items: center; justify-content: center;">
+                            <div class="text-center">
+                                <div class="geo-circle geo-circle--filled" style="width: 80px; height: 80px; margin: 0 auto;"></div>
+                                <p class="text-mono mt-md" style="color: var(--color-text-light);">Add your work here</p>
+                            </div>
+                        </div>
+                        <div class="art-gallery__overlay">
+                            <span class="art-gallery__category">Generative</span>
+                            <h3 class="art-gallery__title">Project Title</h3>
+                        </div>
+                    </article>
+                    
+                    <!-- Project 2 - Narrow + Tall -->
+                    <article class="art-gallery__item art-gallery__item--narrow art-gallery__item--tall" id="project-2">
+                        <video 
+                            src="assets/artistic/Sequencer_Small.mov"
+                            poster="assets/artistic/Sequencer_poster.png"
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                        ></video>
+                        <div class="art-gallery__overlay">
+                            <span class="art-gallery__category">Audio Visual</span>
+                            <h3 class="art-gallery__title">Visual Sequencer</h3>
+                        </div>
+                    </article>
+                    
+                    <!-- Project 3 - Square -->
+                    <article class="art-gallery__item art-gallery__item--square" id="project-3">
+                        <div style="background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 10px, #333 10px, #333 20px); width: 100%; height: 100%; min-height: 250px;"></div>
+                        <div class="art-gallery__overlay">
+                            <span class="art-gallery__category">Pattern</span>
+                            <h3 class="art-gallery__title">Project Title</h3>
+                        </div>
+                    </article>
+                    
+                    <!-- Project 4 - Square -->
+                    <article class="art-gallery__item art-gallery__item--square" id="project-4">
+                        <div style="background: conic-gradient(var(--color-accent), var(--color-accent-secondary), var(--color-accent)); width: 100%; height: 100%; min-height: 250px;"></div>
+                        <div class="art-gallery__overlay">
+                            <span class="art-gallery__category">Shader</span>
+                            <h3 class="art-gallery__title">Project Title</h3>
+                        </div>
+                    </article>
+                    
+                    <!-- Project 5 - Wide -->
+                    <article class="art-gallery__item art-gallery__item--wide" id="project-5">
+                        <div style="background: radial-gradient(circle at 30% 50%, var(--color-accent) 0%, transparent 50%), radial-gradient(circle at 70% 50%, var(--color-accent-secondary) 0%, transparent 50%), #1a1a1a; width: 100%; height: 100%; min-height: 300px;"></div>
+                        <div class="art-gallery__overlay">
+                            <span class="art-gallery__category">Experiment</span>
+                            <h3 class="art-gallery__title">Project Title</h3>
+                        </div>
+                    </article>
+                    
+                    <!-- Project 6 - Narrow -->
+                    <article class="art-gallery__item art-gallery__item--narrow" id="project-6">
+                        <div style="background: linear-gradient(0deg, #1a1a1a 0%, var(--color-accent) 100%); width: 100%; height: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <div style="width: 60px; height: 60px; border: 3px solid var(--color-text-light); animation: spin 10s linear infinite;"></div>
+                        </div>
+                        <div class="art-gallery__overlay">
+                            <span class="art-gallery__category">Motion</span>
+                            <h3 class="art-gallery__title">Project Title</h3>
+                        </div>
+                    </article>
+                </div>
+                
+                <style>
+                    @keyframes spin {
+                        from { transform: rotate(0deg); }
+                        to { transform: rotate(360deg); }
+                    }
+                </style>
+            </div>
+        </section>
+
+        <!-- How to Add Projects -->
+        <section class="section art-block--bordered" style="margin: 0 var(--space-lg);">
+            <div class="container container--narrow">
+                <h2 class="mb-lg text-center">Adding New Projects</h2>
+                <p class="text-center mb-xl" style="color: var(--color-muted);">
+                    This page is designed to be easily extended. Here's how to add your artistic work:
+                </p>
+                
+                <div class="grid grid--2">
+                    <div class="art-block art-block--dark">
+                        <h4 class="mb-md" style="color: var(--color-accent);">1. Gallery Items</h4>
+                        <p style="color: var(--color-muted); font-size: 0.9rem;">
+                            Copy an existing <code>&lt;article class="art-gallery__item"&gt;</code> block 
+                            and modify the content. Use size modifiers like <code>--wide</code>, 
+                            <code>--narrow</code>, <code>--tall</code>, or <code>--square</code>.
+                        </p>
+                    </div>
+                    
+                    <div class="art-block art-block--dark">
+                        <h4 class="mb-md" style="color: var(--color-accent);">2. Images</h4>
+                        <p style="color: var(--color-muted); font-size: 0.9rem;">
+                            Replace the placeholder <code>&lt;div&gt;</code> with an 
+                            <code>&lt;img&gt;</code> element. Add images to the 
+                            <code>assets/artistic/</code> folder.
+                        </p>
+                    </div>
+                    
+                    <div class="art-block art-block--dark">
+                        <h4 class="mb-md" style="color: var(--color-accent);">3. Detail Pages</h4>
+                        <p style="color: var(--color-muted); font-size: 0.9rem;">
+                            Create individual pages in <code>artistic/</code> folder for detailed 
+                            project descriptions. Link from gallery items.
+                        </p>
+                    </div>
+                    
+                    <div class="art-block art-block--dark">
+                        <h4 class="mb-md" style="color: var(--color-accent);">4. Categories</h4>
+                        <p style="color: var(--color-muted); font-size: 0.9rem;">
+                            Update the category tags in the overlay and the filter tags at the top 
+                            of the page as needed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee -->
+        <div class="marquee mt-xl">
+            <div class="marquee__content">
+                <span>Code as Art</span>
+                <span>•</span>
+                <span>Generative Design</span>
+                <span>•</span>
+                <span>Visual Computing</span>
+                <span>•</span>
+                <span>Creative Technology</span>
+                <span>•</span>
+                <span>Digital Expression</span>
+                <span>•</span>
+                <span>Code as Art</span>
+                <span>•</span>
+                <span>Generative Design</span>
+                <span>•</span>
+                <span>Visual Computing</span>
+                <span>•</span>
+                <span>Creative Technology</span>
+                <span>•</span>
+                <span>Digital Expression</span>
+                <span>•</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer (injected by components.js) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    
+    <!-- Shared Components -->
+    <script src="js/components.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        // Hover-to-play video functionality
+        document.querySelectorAll('.art-gallery__item').forEach(item => {
+            const video = item.querySelector('video');
+            if (video) {
+                item.addEventListener('mouseenter', () => video.play());
+                item.addEventListener('mouseleave', () => video.pause());
+            }
+        });
+
+        // Circle cursor
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            // Check if over dark surface
+            const elementBelow = document.elementFromPoint(e.clientX, e.clientY);
+            if (elementBelow) {
+                const isDark = elementBelow.closest('.art-block--dark, .hero, [style*="background-color: var(--color-bg-dark)"], [style*="background: var(--color-bg-dark)"], [style*="#1a1a1a"], [style*="black"]');
+                cursor.classList.toggle('cursor--light', !!isDark);
+            }
+        });
+        
+        document.querySelectorAll('a, button, .card, .btn').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor--hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor--hover'));
+        });
+    </script>
+</body>
+</html>
