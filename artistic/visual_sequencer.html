@@ -22,16 +22,29 @@
     <div id="nav-placeholder"></div>
 
     <!-- Page Header -->
-    <header class="page-header" style="padding-top: calc(var(--space-2xl) + 60px);">
-        <div class="container">
-            <a href="../artistic.html" class="btn btn--small mb-lg">← Back to Gallery</a>
-            <p class="brutalist-subtitle mb-md">Audio-Visual</p>
-            <h1 class="page-header__title brutalist-title" style="font-size: clamp(2rem, 6vw, 4rem);">
-                Visual Sequencer
-            </h1>
-            <p class="page-header__subtitle">
-                2026 • TouchDesigner, VCV Rack
-            </p>
+    <header class="page-header" style="padding-top: calc(var(--space-xl)); padding-bottom: 0px;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0;">
+            <div style="padding-top: var(--space-lg);">
+                <a href="../artistic.html" class="btn btn--small mb-lg">← Back to Gallery</a>
+                <p class="brutalist-subtitle mb-md">Audio-Visual</p>
+                <h1 class="page-header__title brutalist-title" style="font-size: clamp(2rem, 6vw, 4rem);">
+                    Visual Sequencer
+                </h1>
+                <p class="page-header__subtitle">
+                    2026 • Digital / Generative
+                </p>
+            </div>
+            <div class="art-block art-block--dark" style="min-width: 200px; padding: var(--space-lg);">
+                <h4 class="mb-md" style="color: var(--color-accent);">Details</h4>
+                <p class="text-mono mb-sm" style="font-size: 0.85rem;">Year</p>
+                <p class="mb-md" style="color: var(--color-muted);">2026</p>
+                
+                <p class="text-mono mb-sm" style="font-size: 0.85rem;">Medium</p>
+                <p class="mb-md" style="color: var(--color-muted);">Digital / Generative</p>
+                
+                <p class="text-mono mb-sm" style="font-size: 0.85rem;">Tools</p>
+                <p style="color: var(--color-muted);">TouchDesigner, VCV Rack</p>
+            </div>
         </div>
     </header>
 
@@ -39,19 +52,17 @@
     <main class="main-content">
         
         <!-- Hero Image -->
-        <section class="section--no-pad">
+        <!-- <section class="section--no-pad">
             <div class="container container--wide">
-                <div class="art-block art-block--bordered" style="min-height: 60vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1a1a1a, #333);">
-                    <!-- Replace with your image -->
-                    <p class="text-mono" style="color: var(--color-muted);">Main project image goes here</p>
-                    <!-- <img src="../assets/artistic/project-name/hero.jpg" alt="Project Title" style="width: 100%; height: auto;"> -->
+                <div class="art-block art-block--noborder" style="min-height: 10vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1a1a1a, #333);">
+                    <img src="../assets/artistic/Sequencer_horizontal.png" alt="Visual Sequencer" style="width: 100%; height: auto;">
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Description -->
         <section class="section">
-            <div class="container container--narrow">
+            <div class="container" style="max-width: 1100px;">
                 <div class="grid grid--asym">
                     <div>
                         <h2 class="mb-lg">About This Project</h2>
@@ -68,16 +79,17 @@
                             were you trying to convey?
                         </p>
                     </div>
-                    <div class="art-block art-block--dark">
-                        <h4 class="mb-md" style="color: var(--color-accent);">Details</h4>
-                        <p class="text-mono mb-sm" style="font-size: 0.85rem;">Year</p>
-                        <p class="mb-md" style="color: var(--color-muted);">2024</p>
-                        
-                        <p class="text-mono mb-sm" style="font-size: 0.85rem;">Medium</p>
-                        <p class="mb-md" style="color: var(--color-muted);">Digital / Generative</p>
-                        
-                        <p class="text-mono mb-sm" style="font-size: 0.85rem;">Tools</p>
-                        <p style="color: var(--color-muted);">Processing, GLSL, etc.</p>
+                    <div>
+                        <article class="art-gallery__item video" style="height: 70vh;">
+                            <video 
+                                src="../assets/artistic/Sequencer_Small.mov"
+                                loop
+                                playsinline
+                                controls
+                                preload="metadata"
+                                style="height: 100%; width: auto;"
+                            ></video>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -140,41 +152,33 @@ function createArt() {
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="footer__section">
-                    <h4 class="footer__title">Navigation</h4>
-                    <ul class="footer__links">
-                        <li><a href="../index.html" class="footer__link">Home</a></li>
-                        <li><a href="../projects.html" class="footer__link">Projects</a></li>
-                        <li><a href="../publications.html" class="footer__link">Publications</a></li>
-                        <li><a href="../experience.html" class="footer__link">Experience</a></li>
-                        <li><a href="../artistic.html" class="footer__link">Artistic</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer__section">
-                    <h4 class="footer__title">Connect</h4>
-                    <ul class="footer__links">
-                        <li><a href="mailto:stanciulescuandrei99@gmail.com" class="footer__link">Email</a></li>
-                        <li><a href="https://github.com/StanciulescuAndrei" class="footer__link" target="_blank" rel="noopener">GitHub</a></li>
-                        <li><a href="https://www.linkedin.com/in/stanciulescu-andrei/" class="footer__link" target="_blank" rel="noopener">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <p class="footer__copyright">
-                © 2024 Andrei Stanciulescu. Built with raw HTML & CSS.
-            </p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <!-- Mobile Nav Script -->
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Scripts -->
+    <script src="../js/components.js"></script>
     <script>
-        function toggleNav() {
-            document.getElementById('nav-links').classList.toggle('nav__links--open');
-        }
+        // Circle cursor
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        
+        // Detect dark sections for cursor color
+        document.addEventListener('mousemove', (e) => {
+            const el = document.elementFromPoint(e.clientX, e.clientY);
+            const isDark = el && el.closest('.art-block--dark, .hero, [style*="background-color: var(--color-bg-dark)"]');
+            cursor.classList.toggle('cursor--light', !!isDark);
+        });
+        
+        // Add hover effect to interactive elements
+        document.querySelectorAll('a, button, .art-gallery__item').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor--hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor--hover'));
+        });
     </script>
 </body>
 </html>

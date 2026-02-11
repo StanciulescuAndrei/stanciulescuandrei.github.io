@@ -39,6 +39,11 @@
     border: var(--border-heavy);
 }
 
+.art-block--noborder {
+    border: none;
+    padding: 0;
+}
+
 .art-block--accent {
     background-color: var(--color-accent);
     color: var(--color-text-light);
@@ -228,6 +233,11 @@
     gap: var(--space-md);
 }
 
+/* Allow anchor tags to work as grid items */
+.art-gallery > a {
+    display: contents;
+}
+
 .art-gallery__item {
     position: relative;
     overflow: hidden;
@@ -259,10 +269,11 @@
 
 /* Video styling for gallery items */
 .art-gallery__item video {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background-color: #000;
+    background-color: #ffffff;
 }
 
 .art-gallery__image {
