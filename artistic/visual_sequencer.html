@@ -63,7 +63,7 @@
         <!-- Description -->
         <section class="section">
             <div class="container" style="max-width: 1100px;">
-                <div class="grid grid--asym">
+                <div class="grid grid--asym" style="text-align: justify;">
                     <div>
                         <h2 class="mb-lg">About This Project</h2>
                         <p>
@@ -95,56 +95,69 @@
             </div>
         </section>
 
+        <!-- Divider -->
+        <div class="container"><hr style="border: none; border-top: var(--border-thick); margin: 0;"></div>
+
         <!-- Gallery -->
-        <section class="section art-block--dark">
+        <!-- <section class="section art-block--dark">
             <div class="container">
                 <h2 class="mb-xl text-center">Gallery</h2>
                 <div class="grid grid--3">
-                    <!-- Image 1 -->
                     <div class="art-block art-block--bordered" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--color-bg);">
                         <p class="text-mono text-muted">Image 1</p>
-                        <!-- <img src="../assets/artistic/project-name/01.jpg" alt=""> -->
                     </div>
-                    <!-- Image 2 -->
                     <div class="art-block art-block--bordered" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--color-bg);">
                         <p class="text-mono text-muted">Image 2</p>
                     </div>
-                    <!-- Image 3 -->
                     <div class="art-block art-block--bordered" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--color-bg);">
                         <p class="text-mono text-muted">Image 3</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Process (Optional) -->
         <section class="section">
-            <div class="container container--narrow">
+            <div class="container container--narrow" style="text-align: justify;">
                 <h2 class="mb-lg">Process</h2>
                 <p>
-                    Document your creative process here. Include sketches, iterations, 
-                    or behind-the-scenes details that show how the project evolved.
+                    Recently, I became very interested in sound design through sound synthesis, so for this final project, I wanted to explore generative sound using a modular system in VCV Rack. 
+                    The main idea was that the system would receive some inputs as control voltage (CV) and then output a somewhat coherent melody, which is driven by those inputs. 
+                    These inputs can come from any source, but in this case, I used a TouchDesigner patch with synchronized visuals to further reinforce that there is a relationship between the source 
+                    of the data, in this case, the image and the moving rectangle, and the sound, instead of the sound being preprogrammed. 
                 </p>
-                
-                <!-- Code snippet example -->
-                <div class="art-block art-block--dark mt-lg">
-                    <pre><code style="color: var(--color-text-light); font-size: 0.9rem;">
-// Example code snippet if relevant
-function createArt() {
-    // Your creative code here
-}
-                    </code></pre>
-                </div>
+                <h3 class="mb-md">Melody</h3>
+                <p>
+                    The VCV system takes as input 3 sources, which will drive 3 oscillators. 
+                    Because the input can take any value, we need to quantize it to a scale, then shift it down if necessary, and plug it into the oscillator. 
+                    Since we have 3 notes playing, two of them will be shifted to lower octaves to take up different frequency spaces. 
+                    The oscillator output is then passed through a filter and then a Tape Delay module that adds some warmth and color to the sound. 
+                    There are two envelope generators controlling this part, one for the VCA, where, by controlling the input gate length, you can get longer or shorter notes, and another similar EG that controls the filter cutoff frequency (which adds some more dynamics to the sound and mimics an almost “percussive” attack).
+
+                </p>
+                <h3 class="mb-md">Rhythm</h3>
+                <p>
+                    To accompany the melody, I wanted to create the percussion in the same module. 
+                    There are only two sounds, a kick and a cymbal sound. 
+                    The kick plays every beat while the cymbal plays on the 2 and 4. 
+                    The kick is built from an oscillator and a noise source, both with very short envelopes. 
+                    A second envelope is used to quickly reduce the oscillator frequency after the initial attack to create a punchier sound. 
+                    This then goes through a Tape Machine and a Delay. 
+                    For the cymbals, we use a noise source through a filter where an envelope controls the cutoff to reduce the initial brightness. 
+                    The same envelope also controls the CV input of a wavetable VCO where I selected a noisy waveform. 
+                    This is then mixed with the kick and passed to the final output mixer. 
+                    The timing of the drums is controlled from an external clock source, and to only trigger the cymbals on the 2 and 4, 
+                    I used a sequencer, but a more elegant version would have been to use a simple clock divider that outputs one pulse for every 2 input pulses.
+
+                </p>
             </div>
         </section>
 
         <!-- Navigation -->
         <section class="section">
             <div class="container">
-                <div class="flex flex--between">
-                    <a href="#" class="btn">← Previous Project</a>
+                <div class="text-center">
                     <a href="../artistic.html" class="btn">Back to Gallery</a>
-                    <a href="#" class="btn">Next Project →</a>
                 </div>
             </div>
         </section>

@@ -1,6 +1,22 @@
 // Shared Navigation Component
 // Update the navigation here and it will reflect on all pages
 
+// Detect the base path by finding where components.js is loaded from
+function getBasePath() {
+    const scripts = document.getElementsByTagName('script');
+    for (let script of scripts) {
+        const src = script.getAttribute('src') || '';
+        if (src.includes('components.js')) {
+            // Extract the path before 'js/components.js'
+            const match = src.match(/^(.*?)js\/components\.js/);
+            if (match) {
+                return match[1]; // e.g., '../' or '' or '../../'
+            }
+        }
+    }
+    return '';
+}
+
 const navLinks = [
     { href: "index.html", text: "Home", id: "home" },
     { href: "artistic.html", text: "Artistic Projects", id: "artistic" },
@@ -10,16 +26,17 @@ const navLinks = [
 ];
 
 function renderNavigation(activePageId) {
+    const basePath = getBasePath();
     const navLinksHtml = navLinks.map(link => {
         const isActive = link.id === activePageId;
         const activeClass = isActive ? ' nav__link--active' : '';
-        return `<li><a href="${link.href}" class="nav__link${activeClass}">${link.text}</a></li>`;
+        return `<li><a href="${basePath}${link.href}" class="nav__link${activeClass}">${link.text}</a></li>`;
     }).join('\n                ');
 
     return `
     <nav class="nav">
         <div class="container nav__inner">
-            <a href="index.html" class="nav__logo">A.S.</a>
+            <a href="${basePath}index.html" class="nav__logo">A.S.</a>
             <button class="nav__toggle" aria-label="Toggle navigation" onclick="toggleNav()">
                 <span class="nav__toggle-bar"></span>
                 <span class="nav__toggle-bar"></span>
@@ -69,8 +86,9 @@ const footerQuickLinks = [
 ];
 
 function renderFooter() {
+    const basePath = getBasePath();
     const navLinksHtml = footerNavLinks.map(link => 
-        `<li><a href="${link.href}" class="footer__link">${link.text}</a></li>`
+        `<li><a href="${basePath}${link.href}" class="footer__link">${link.text}</a></li>`
     ).join('\n                        ');
     
     const connectLinksHtml = footerConnectLinks.map(link => {
@@ -80,7 +98,8 @@ function renderFooter() {
     
     const quickLinksHtml = footerQuickLinks.map(link => {
         const attrs = link.external ? ' target="_blank" rel="noopener"' : '';
-        return `<li><a href="${link.href}" class="footer__link"${attrs}>${link.text}</a></li>`;
+        const href = link.external ? link.href : `${basePath}${link.href}`;
+        return `<li><a href="${href}" class="footer__link"${attrs}>${link.text}</a></li>`;
     }).join('\n                        ');
 
     return `
