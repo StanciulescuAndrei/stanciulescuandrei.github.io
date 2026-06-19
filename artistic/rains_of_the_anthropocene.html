@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Sound Installation">
+    <title>Rains of the Anthropocene</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets (note the relative path) -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/artistic.css">
+</head>
+<body class="grain">
+    <!-- Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Page Header -->
+    <header class="page-header" style="padding-top: calc(var(--space-xl)); padding-bottom: 0px;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0;">
+            <div style="padding-top: var(--space-lg);">
+                <a href="../artistic.html" class="btn btn--small mb-lg">← Back to Gallery</a>
+                <p class="brutalist-subtitle mb-md">Interactive Sound Installation</p>
+                <h1 class="page-header__title brutalist-title" style="font-size: clamp(2rem, 6vw, 4rem);">
+                    Rains of the Anthropocene
+                </h1>
+                <p class="page-header__subtitle">
+                    2026 • Generative Sound / Installation
+                </p>
+            </div>
+            <div class="art-block art-block--dark" style="min-width: 200px; padding: var(--space-lg);">
+                <h4 class="mb-md" style="color: var(--color-accent);">Details</h4>
+                <p class="text-mono mb-sm" style="font-size: 0.85rem;">Year</p>
+                <p class="mb-md" style="color: var(--color-muted);">2026</p>
+
+                <p class="text-mono mb-sm" style="font-size: 0.85rem;">Medium</p>
+                <p class="mb-md" style="color: var(--color-muted);">Interactive Sound Installation</p>
+
+                <p class="text-mono mb-sm" style="font-size: 0.85rem;">Tools</p>
+                <p style="color: var(--color-muted);">Generative Audio, Sensor Tracking, Historical Climate Data</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Description -->
+        <section class="section">
+            <div class="container" style="max-width: 1100px;">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-xl);">
+                    <div style="width: min(70vw, 100%); margin: 0 auto; text-align: justify;">
+                        <article class="art-gallery__item" style="width: 100%; margin: 0 auto var(--space-lg);">
+                            <img
+                                src="../assets/artistic/RainsOfTheAnthropocene_hero.jpg"
+                                alt="Rains of the Anthropocene"
+                                style="display: block; width: 100%; height: auto;"
+                            >
+                        </article>
+                        <div class="container container--narrow" style="text-align: justify;">
+                            <h2 class="mb-lg">About This Project</h2>
+                            <p>
+                                Rains of the Anthropocene is a generative sound installation that explores the erosion of the Earth's hydrological cycles through human presence.
+                                Physical droplets turn into a melodic baseline derived from historical precipitation data.
+                                However, the environment is never truly isolated. As visitors move around the sculpture, their presence is captured and fed into the system as a force against the natural balance.
+                            </p>
+                            <p>
+                                By centering the audience as the catalyst for change, it reminds us that we are no longer mere observers, but the ones bringing the storm.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container"><hr style="border: none; border-top: var(--border-thick); margin: 0;"></div>
+
+        <!-- Technical Implementation -->
+        <section class="section">
+            <div class="container container--narrow" style="text-align: justify;">
+                <h2 class="mb-lg">Sound Architecture</h2>
+                <article class="art-gallery__item" style="max-width: 70ch; margin: 0 0 var(--space-lg);">
+                    <img
+                        src="../assets/artistic/RainsOfTheAnthropocene_pd.jpeg"
+                        alt="Pure Data patcher for Rains of the Anthropocene"
+                        style="display: block; width: 100%; height: auto;"
+                    >
+                </article>
+
+                <p>
+                    The piece is built in Pure Data as a vocoder, with the synthesised voice acting as the carrier and the physical rain as the modulator.
+                    The carrier is a generative melodic line: a 2nd-order Markov chain walks through seven diatonic triads derived from historical precipitation data, gating notes through a phasor oscillator whose wave, timbre, cutoff, resonance, decay, and glide are slowly drifted by independent low-frequency oscillators.
+                </p>
+                <p>
+                    The modulator comes from three piezo sensors mounted under the sculpture, each picking up the impact of a physical droplet, alongside a fourth channel carrying a hardware synth voice that is itself shaped by the same vocoder.
+                    All four signals pass through envelope followers and threshold detectors, then a custom noise gate, before entering a twelve-band parallel vocoder bank.
+                    Each band is a matched pair of band-pass filters tuned to fixed centre frequencies between 101 Hz and 3.3 kHz; the modulator's per-band amplitude shapes the carrier's per-band amplitude in real time, so the rain literally speaks through the melody.
+                </p>
+                <p>
+                    Visitor presence is captured by three distance sensors read over a serial connection. Their values drive a voltage-controlled filter on the master bus, warping timbre as people approach the sculpture.
+                    The final signal chain runs through delay and plate reverberation before reaching the speakers, leaving the audience inside the storm they are causing.
+                </p>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container"><hr style="border: none; border-top: var(--border-thick); margin: 0;"></div>
+
+        <!-- Gallery -->
+        <section class="section">
+            <div class="container" style="max-width: 1100px;">
+                <div class="grid grid--2" style="gap: var(--space-lg);">
+                    <article class="art-gallery__item" style="margin: 0;">
+                        <img
+                            src="../assets/artistic/RainsOfTheAnthropocene_01.jpg"
+                            alt="Rains of the Anthropocene — installation view"
+                            style="display: block; width: 100%; height: 100%; object-fit: cover;"
+                        >
+                    </article>
+                    <article class="art-gallery__item" style="margin: 0;">
+                        <img
+                            src="../assets/artistic/RainsOfTheAnthropocene_02.jpg"
+                            alt="Rains of the Anthropocene — detail"
+                            style="display: block; width: 100%; height: 100%; object-fit: cover;"
+                        >
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container"><hr style="border: none; border-top: var(--border-thick); margin: 0;"></div>
+
+        <!-- Navigation -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center">
+                    <a href="../artistic.html" class="btn">Back to Gallery</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Scripts -->
+    <script src="../js/components.js"></script>
+    <script>
+        // Circle cursor
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Detect dark sections for cursor color
+        document.addEventListener('mousemove', (e) => {
+            const el = document.elementFromPoint(e.clientX, e.clientY);
+            const isDark = el && el.closest('.art-block--dark, .hero, [style*="background-color: var(--color-bg-dark)"]');
+            cursor.classList.toggle('cursor--light', !!isDark);
+        });
+
+        // Add hover effect to interactive elements
+        document.querySelectorAll('a, button, .art-gallery__item').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor--hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor--hover'));
+        });
+    </script>
+</body>
+</html>
