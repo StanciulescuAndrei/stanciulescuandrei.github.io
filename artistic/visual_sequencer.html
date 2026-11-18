@@ -3,197 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Visual Sequencer - AV Project">
-    <title>Visual Sequencer</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets (note the relative path) -->
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/artistic.css">
+    <meta name="description" content="Visual Sequencer - Audio-Visual Project">
+    <title>Visual Sequencer | Andrei Stanciulescu</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="grain">
-    <!-- Navigation -->
+<body data-page="artistic" data-sub="sequencer">
+<div class="page">
     <div id="nav-placeholder"></div>
-
-    <!-- Page Header -->
-    <header class="page-header" style="padding-top: calc(var(--space-xl)); padding-bottom: 0px;">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0;">
-            <div style="padding-top: var(--space-lg);">
-                <a href="../artistic.html" class="btn btn--small mb-lg">← Back to Gallery</a>
-                <p class="brutalist-subtitle mb-md">Audio-Visual</p>
-                <h1 class="page-header__title brutalist-title" style="font-size: clamp(2rem, 6vw, 4rem);">
-                    Visual Sequencer
-                </h1>
-                <p class="page-header__subtitle">
-                    2026 • Digital / Generative
-                </p>
-            </div>
-            <div class="art-block art-block--dark" style="min-width: 200px; padding: var(--space-lg);">
-                <h4 class="mb-md" style="color: var(--color-accent);">Details</h4>
-                <p class="text-mono mb-sm" style="font-size: 0.85rem;">Year</p>
-                <p class="mb-md" style="color: var(--color-muted);">2026</p>
-                
-                <p class="text-mono mb-sm" style="font-size: 0.85rem;">Medium</p>
-                <p class="mb-md" style="color: var(--color-muted);">Digital / Generative</p>
-                
-                <p class="text-mono mb-sm" style="font-size: 0.85rem;">Tools</p>
-                <p style="color: var(--color-muted);">TouchDesigner, VCV Rack</p>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        
-        <!-- Hero Image -->
-        <!-- <section class="section--no-pad">
-            <div class="container container--wide">
-                <div class="art-block art-block--noborder" style="min-height: 10vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1a1a1a, #333);">
-                    <img src="../assets/artistic/Sequencer_horizontal.png" alt="Visual Sequencer" style="width: 100%; height: auto;">
-                </div>
-            </div>
-        </section> -->
-
-        <!-- Description -->
-        <section class="section">
-            <div class="container" style="max-width: 1100px;">
-                <div class="grid grid--asym" style="text-align: justify;">
-                    <div>
-                        <h2 class="mb-lg">About This Project</h2>
-                        <p>
-                            The "Visual Sequencer" explores generative sound using a modular system built within VCV Rack. 
-                            The core essence of the project is a system that receives control voltage (CV) inputs to output a coherent melody driven entirely by those inputs. 
-                            Rather than using preprogrammed sound, the project achieves its generative audio by pulling data from a TouchDesigner patch with synchronized visuals. 
-                            By utilizing color data from an image, the project successfully establishes a clear relationship between visual source data and the resulting generated sound.
-                        </p>
-                        <p>
-                            The vision was to move away from preprogrammed audio. 
-                            Instead, the intention was to reinforce the relationship between the source of the data, in this case, an image and a moving rectangle, and the resulting sound it produces. 
-                            Recently, I became very interested in sound synthesis and modular systems, so in this project, I wanted to explore how they can be used in generative audio sequences. 
-                            In its most raw form, this is a tool for audio creation, to discover new sequences and interesting evolving patterns. 
-                            It can also be adapted to an installation that reacts to the live environment to further increase its interactivity and sonic possibilities. 
-
-                        </p>
-                    </div>
-                    <div>
-                        <article class="art-gallery__item video" style="height: 70vh;">
-                            <video 
-                                src="../assets/artistic/Sequencer_Small.mov"
-                                loop
-                                playsinline
-                                controls
-                                preload="metadata"
-                                style="height: 100%; width: auto;"
-                            ></video>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Divider -->
-        <div class="container"><hr style="border: none; border-top: var(--border-thick); margin: 0;"></div>
-
-        <!-- Gallery -->
-        <!-- <section class="section art-block--dark">
-            <div class="container">
-                <h2 class="mb-xl text-center">Gallery</h2>
-                <div class="grid grid--3">
-                    <div class="art-block art-block--bordered" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--color-bg);">
-                        <p class="text-mono text-muted">Image 1</p>
-                    </div>
-                    <div class="art-block art-block--bordered" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--color-bg);">
-                        <p class="text-mono text-muted">Image 2</p>
-                    </div>
-                    <div class="art-block art-block--bordered" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--color-bg);">
-                        <p class="text-mono text-muted">Image 3</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- Process (Optional) -->
-        <section class="section">
-            <div class="container container--narrow" style="text-align: justify;">
-                <h2 class="mb-lg">Process</h2>
-                <p>
-                    Recently, I became very interested in sound design through sound synthesis, so for this final project, I wanted to explore generative sound using a modular system in VCV Rack. 
-                    The main idea was that the system would receive some inputs as control voltage (CV) and then output a somewhat coherent melody, which is driven by those inputs. 
-                    These inputs can come from any source, but in this case, I used a TouchDesigner patch with synchronized visuals to further reinforce that there is a relationship between the source 
-                    of the data, in this case, the image and the moving rectangle, and the sound, instead of the sound being preprogrammed. 
-                </p>
-                <h3 class="mb-md">Melody</h3>
-                <p>
-                    The VCV system takes as input 3 sources, which will drive 3 oscillators. 
-                    Because the input can take any value, we need to quantize it to a scale, then shift it down if necessary, and plug it into the oscillator. 
-                    Since we have 3 notes playing, two of them will be shifted to lower octaves to take up different frequency spaces. 
-                    The oscillator output is then passed through a filter and then a Tape Delay module that adds some warmth and color to the sound. 
-                    There are two envelope generators controlling this part, one for the VCA, where, by controlling the input gate length, you can get longer or shorter notes, and another similar EG that controls the filter cutoff frequency (which adds some more dynamics to the sound and mimics an almost “percussive” attack).
-
-                </p>
-                <h3 class="mb-md">Rhythm</h3>
-                <p>
-                    To accompany the melody, I wanted to create the percussion in the same module. 
-                    There are only two sounds, a kick and a cymbal sound. 
-                    The kick plays every beat while the cymbal plays on the 2 and 4. 
-                    The kick is built from an oscillator and a noise source, both with very short envelopes. 
-                    A second envelope is used to quickly reduce the oscillator frequency after the initial attack to create a punchier sound. 
-                    This then goes through a Tape Machine and a Delay. 
-                    For the cymbals, we use a noise source through a filter where an envelope controls the cutoff to reduce the initial brightness. 
-                    The same envelope also controls the CV input of a wavetable VCO where I selected a noisy waveform. 
-                    This is then mixed with the kick and passed to the final output mixer. 
-                    The timing of the drums is controlled from an external clock source, and to only trigger the cymbals on the 2 and 4, 
-                    I used a sequencer, but a more elegant version would have been to use a simple clock divider that outputs one pulse for every 2 input pulses.
-
-                </p>
-            </div>
-        </section>
-
-        <!-- Navigation -->
-        <section class="section">
-            <div class="container">
-                <div class="text-center">
-                    <a href="../artistic.html" class="btn">Back to Gallery</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-
-    <!-- Scripts -->
     <script src="../js/components.js"></script>
-    <script>
-        // Circle cursor
-        const cursor = document.querySelector('.cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-        
-        // Detect dark sections for cursor color
-        document.addEventListener('mousemove', (e) => {
-            const el = document.elementFromPoint(e.clientX, e.clientY);
-            const isDark = el && el.closest('.art-block--dark, .hero, [style*="background-color: var(--color-bg-dark)"]');
-            cursor.classList.toggle('cursor--light', !!isDark);
-        });
-        
-        // Add hover effect to interactive elements
-        document.querySelectorAll('a, button, .art-gallery__item').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('cursor--hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor--hover'));
-        });
-    </script>
+
+    <main class="content">
+
+        <p class="crumbs"><a href="../index.html">home</a> / <a href="../artistic.html">artistic projects</a> / visual sequencer</p>
+
+        <header class="page-head">
+            <h1 class="page-title">Visual Sequencer</h1>
+            <p class="lede">2026 &middot; digital / generative</p>
+        </header>
+
+        <table class="meta">
+            <tr><th scope="row">Year</th><td>2026</td></tr>
+            <tr><th scope="row">Medium</th><td>Audio-Visual &mdash; Digital / Generative</td></tr>
+            <tr><th scope="row">Tools</th><td>TouchDesigner, VCV Rack</td></tr>
+        </table>
+
+        <h2>About this project</h2>
+        <figure class="float-right">
+            <video poster="../assets/thumbs/visual_sequencer_poster.jpg" controls loop playsinline preload="metadata" width="720" height="1280">
+                <source src="../assets/artistic/Sequencer_Small.mp4" type="video/mp4">
+                <source src="../assets/artistic/Sequencer_Small.mov" type="video/quicktime">
+            </video>
+            <figcaption>Visual Sequencer in action (0:42).</figcaption>
+        </figure>
+        <p>
+            The "Visual Sequencer" explores generative sound using a modular system built within VCV Rack.
+            The core essence of the project is a system that receives control voltage (CV) inputs to output a coherent melody driven entirely by those inputs.
+            Rather than using preprogrammed sound, the project achieves its generative audio by pulling data from a TouchDesigner patch with synchronized visuals.
+            By utilizing color data from an image, the project successfully establishes a clear relationship between visual source data and the resulting generated sound.
+        </p>
+        <p>
+            The vision was to move away from preprogrammed audio.
+            Instead, the intention was to reinforce the relationship between the source of the data, in this case, an image and a moving rectangle, and the resulting sound it produces.
+            Recently, I became very interested in sound synthesis and modular systems, so in this project, I wanted to explore how they can be used in generative audio sequences.
+            In its most raw form, this is a tool for audio creation, to discover new sequences and interesting evolving patterns.
+            It can also be adapted to an installation that reacts to the live environment to further increase its interactivity and sonic possibilities.
+        </p>
+
+        <h2 class="clear">Process</h2>
+        <p>
+            Recently, I became very interested in sound design through sound synthesis, so for this final project, I wanted to explore generative sound using a modular system in VCV Rack.
+            The main idea was that the system would receive some inputs as control voltage (CV) and then output a somewhat coherent melody, which is driven by those inputs.
+            These inputs can come from any source, but in this case, I used a TouchDesigner patch with synchronized visuals to further reinforce that there is a relationship between the source
+            of the data, in this case, the image and the moving rectangle, and the sound, instead of the sound being preprogrammed.
+        </p>
+
+        <h4>Melody</h4>
+        <p>
+            The VCV system takes as input 3 sources, which will drive 3 oscillators.
+            Because the input can take any value, we need to quantize it to a scale, then shift it down if necessary, and plug it into the oscillator.
+            Since we have 3 notes playing, two of them will be shifted to lower octaves to take up different frequency spaces.
+            The oscillator output is then passed through a filter and then a Tape Delay module that adds some warmth and color to the sound.
+            There are two envelope generators controlling this part, one for the VCA, where, by controlling the input gate length, you can get longer or shorter notes, and another similar EG that controls the filter cutoff frequency (which adds some more dynamics to the sound and mimics an almost &ldquo;percussive&rdquo; attack).
+        </p>
+
+        <h4>Rhythm</h4>
+        <p>
+            To accompany the melody, I wanted to create the percussion in the same module.
+            There are only two sounds, a kick and a cymbal sound.
+            The kick plays every beat while the cymbal plays on the 2 and 4.
+            The kick is built from an oscillator and a noise source, both with very short envelopes.
+            A second envelope is used to quickly reduce the oscillator frequency after the initial attack to create a punchier sound.
+            This then goes through a Tape Machine and a Delay.
+            For the cymbals, we use a noise source through a filter where an envelope controls the cutoff to reduce the initial brightness.
+            The same envelope also controls the CV input of a wavetable VCO where I selected a noisy waveform.
+            This is then mixed with the kick and passed to the final output mixer.
+            The timing of the drums is controlled from an external clock source, and to only trigger the cymbals on the 2 and 4,
+            I used a sequencer, but a more elegant version would have been to use a simple clock divider that outputs one pulse for every 2 input pulses.
+        </p>
+
+        <nav class="pager" aria-label="Project navigation">
+            <a href="rooted_structures.html">&laquo; prev: rooted structures</a>
+            <a href="../artistic.html">back to artistic projects &raquo;</a>
+        </nav>
+
+        <div id="footer-placeholder"></div>
+    </main>
+</div>
 </body>
 </html>

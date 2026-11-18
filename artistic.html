@@ -4,195 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Artistic and creative projects by Andrei Stanciulescu">
-    <title>Artistic | Andrei Stanciulescu</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/artistic.css">
+    <title>Artistic Projects | Andrei Stanciulescu</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="grain" data-page="artistic">
-    <!-- Navigation (injected by components.js) -->
+<body data-page="artistic">
+<div class="page">
     <div id="nav-placeholder"></div>
-
-    <!-- Hero Section -->
-    <header class="hero hero--half" style="background-color: var(--color-bg-dark); color: var(--color-text-light);">
-        <div class="container">
-            <p class="brutalist-subtitle mb-md" style="color: var(--color-accent);">Creative Expression</p>
-            <h1 class="brutalist-title glitch" data-text="Artistic">Artistic</h1>
-            <p class="page-header__subtitle mt-lg" style="color: var(--color-muted); max-width: 600px;">
-                Where technical skills meet creative vision. This space showcases experiments 
-                in algorithmic visuals, sound design, and artistic applications of programming.        
-            </p>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-
-        <!-- Gallery Section -->
-        <section class="section section--large">
-            <div class="container">
-                <h2 class="mb-xl">Gallery</h2>
-                
-                <div class="art-gallery">
-                    <!-- Project 1 - Wide -->
-                    <a href="artistic/rains_of_the_anthropocene.html">
-                        <article class="art-gallery__item art-gallery__item--wide" id="project-1">
-                            <img src="assets/artistic/RainsOfTheAnthropocene_hero.jpg" alt="Rains of the Anthropocene" style="width: 100%; height: 100%; object-fit: cover; min-height: 300px;">
-                            <div class="art-gallery__overlay">
-                                <span class="art-gallery__category">Sound Installation</span>
-                                <h3 class="art-gallery__title">Rains of the Anthropocene (2026)</h3>
-                            </div>
-                        </article>
-                    </a>
-                    
-                    <!-- Project 2 - Narrow + Tall -->
-                    <a href="artistic/visual_sequencer.html">
-                        <article class="art-gallery__item art-gallery__item--narrow art-gallery__item--tall" id="project-2">
-                            <video 
-                                src="assets/artistic/Sequencer_Small.mov"
-                                poster="assets/artistic/Sequencer_poster.png"
-                                muted
-                                loop
-                                playsinline
-                                preload="metadata"
-                            ></video>
-                            <div class="art-gallery__overlay">
-                                <span class="art-gallery__category">Audio Visual</span>
-                                <h3 class="art-gallery__title">Visual Sequencer</h3>
-                            </div>
-                        </article>
-                    </a>
-                    
-                    <!-- Project 3 - Square -->
-                    <article class="art-gallery__item art-gallery__item--square" id="project-3">
-                        <div style="background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 10px, #333 10px, #333 20px); width: 100%; height: 100%; min-height: 250px;"></div>
-                        <div class="art-gallery__overlay">
-                            <span class="art-gallery__category">Pattern</span>
-                            <h3 class="art-gallery__title">Project Title</h3>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 4 - Square -->
-                    <article class="art-gallery__item art-gallery__item--square" id="project-4">
-                        <div style="background: conic-gradient(var(--color-accent), var(--color-accent-secondary), var(--color-accent)); width: 100%; height: 100%; min-height: 250px;"></div>
-                        <div class="art-gallery__overlay">
-                            <span class="art-gallery__category">Shader</span>
-                            <h3 class="art-gallery__title">Project Title</h3>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 5 - Wide -->
-                    <a href="artistic/rooted_structures.html">
-                        <article class="art-gallery__item art-gallery__item--wide" id="project-5">
-                            <video
-                                src="assets/artistic/RS_Web.mov"
-                                muted
-                                loop
-                                playsinline
-                                preload="metadata"
-                            ></video>
-                            <div class="art-gallery__overlay">
-                                <span class="art-gallery__category">Performance</span>
-                                <h3 class="art-gallery__title">Rooted Structures (2026)</h3>
-                            </div>
-                        </article>
-                    </a>
-                    
-                    <!-- Project 6 - Narrow -->
-                    <article class="art-gallery__item art-gallery__item--narrow" id="project-6">
-                        <div style="background: linear-gradient(0deg, #1a1a1a 0%, var(--color-accent) 100%); width: 100%; height: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-                            <div style="width: 60px; height: 60px; border: 3px solid var(--color-text-light); animation: spin 10s linear infinite;"></div>
-                        </div>
-                        <div class="art-gallery__overlay">
-                            <span class="art-gallery__category">Motion</span>
-                            <h3 class="art-gallery__title">Project Title</h3>
-                        </div>
-                    </article>
-                </div>
-                
-                <style>
-                    @keyframes spin {
-                        from { transform: rotate(0deg); }
-                        to { transform: rotate(360deg); }
-                    }
-                </style>
-            </div>
-        </section>
-
-        <!-- Marquee -->
-        <div class="marquee mt-xl">
-            <div class="marquee__content">
-                <span>Code as Art</span>
-                <span>•</span>
-                <span>Generative Design</span>
-                <span>•</span>
-                <span>Visual Computing</span>
-                <span>•</span>
-                <span>Creative Technology</span>
-                <span>•</span>
-                <span>Digital Expression</span>
-                <span>•</span>
-                <span>Code as Art</span>
-                <span>•</span>
-                <span>Generative Design</span>
-                <span>•</span>
-                <span>Visual Computing</span>
-                <span>•</span>
-                <span>Creative Technology</span>
-                <span>•</span>
-                <span>Digital Expression</span>
-                <span>•</span>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Footer (injected by components.js) -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    
-    <!-- Shared Components -->
     <script src="js/components.js"></script>
-    
-    <!-- Scripts -->
-    <script>
-        // Hover-to-play video functionality
-        document.querySelectorAll('.art-gallery__item').forEach(item => {
-            const video = item.querySelector('video');
-            if (video) {
-                item.addEventListener('mouseenter', () => video.play());
-                item.addEventListener('mouseleave', () => video.pause());
-            }
-        });
 
-        // Circle cursor
-        const cursor = document.querySelector('.cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            // Check if over dark surface
-            const elementBelow = document.elementFromPoint(e.clientX, e.clientY);
-            if (elementBelow) {
-                const isDark = elementBelow.closest('.art-block--dark, .hero, [style*="background-color: var(--color-bg-dark)"], [style*="background: var(--color-bg-dark)"], [style*="#1a1a1a"], [style*="black"]');
-                cursor.classList.toggle('cursor--light', !!isDark);
-            }
-        });
-        
-        document.querySelectorAll('a, button, .card, .btn').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('cursor--hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor--hover'));
-        });
-    </script>
+    <main class="content">
+
+        <header class="page-head">
+            <h1 class="page-title">Artistic Projects</h1>
+            <p class="lede">sound / installation / performance / audio-visual</p>
+        </header>
+
+        <p>
+            Where technical skills meet creative vision. This space showcases experiments
+            in algorithmic visuals, sound design, and artistic applications of programming.
+        </p>
+
+        <h2>Works</h2>
+        <div class="entries entries--large">
+            <div class="entry">
+                <a class="entry__thumb" href="artistic/rains_of_the_anthropocene.html">
+                    <img src="assets/thumbs/rains_thumb.jpg" alt="Rains of the Anthropocene" width="260" height="195">
+                </a>
+                <div>
+                    <h3><a href="artistic/rains_of_the_anthropocene.html">Rains of the Anthropocene</a></h3>
+                    <p class="entry__meta">2026 &middot; interactive sound installation</p>
+                    <p>
+                        A generative sound installation that explores the erosion of the Earth's hydrological
+                        cycles through human presence. Physical droplets turn into a melodic baseline derived
+                        from historical precipitation data.
+                    </p>
+                    <p class="links">[<a href="artistic/rains_of_the_anthropocene.html">view project</a>]</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <a class="entry__thumb" href="artistic/rooted_structures.html">
+                    <img src="assets/thumbs/rooted_thumb.jpg" alt="Rooted Structures" width="260" height="195">
+                </a>
+                <div>
+                    <h3><a href="artistic/rooted_structures.html">Rooted Structures</a></h3>
+                    <p class="entry__meta">2026 &middot; audio-visual performance</p>
+                    <p>
+                        An immersive performance engaging with accumulation, construction, and constant growth,
+                        framed within a dystopian reflection on consumerism and expansion.
+                    </p>
+                    <p class="links">[<a href="artistic/rooted_structures.html">view project</a>]</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <a class="entry__thumb" href="artistic/visual_sequencer.html">
+                    <img src="assets/thumbs/sequencer_thumb.jpg" alt="Visual Sequencer" width="260" height="195">
+                </a>
+                <div>
+                    <h3><a href="artistic/visual_sequencer.html">Visual Sequencer</a></h3>
+                    <p class="entry__meta">2026 &middot; audio-visual / generative</p>
+                    <p>
+                        Generative sound from a modular system in VCV Rack, driven by colour data from a
+                        synchronized TouchDesigner patch.
+                    </p>
+                    <p class="links">[<a href="artistic/visual_sequencer.html">view project</a>]</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Keywords</h2>
+        <p class="mono">code as art / generative design / visual computing / creative technology / digital expression</p>
+
+        <div id="footer-placeholder"></div>
+    </main>
+</div>
 </body>
 </html>

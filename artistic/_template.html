@@ -1,180 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+    TEMPLATE for a new artistic project page.
+    1. Copy this file to artistic/your_project.html
+    2. Set data-sub on <body> to a short id and add the page to
+       `artisticLinks` in js/components.js (it then shows in the sidebar)
+    3. Add an .entry for it in artistic.html
+    4. Put small/web-sized images in assets/thumbs/ and link the
+       full-resolution originals from assets/artistic/
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Visual Sequencer - AV Project">
-    <title>Visual Sequencer</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets (note the relative path) -->
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/artistic.css">
+    <meta name="description" content="Project Title - short description">
+    <title>Project Title | Andrei Stanciulescu</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="grain">
-    <!-- Navigation -->
+<body data-page="artistic" data-sub="project-id">
+<div class="page">
     <div id="nav-placeholder"></div>
+    <script src="../js/components.js"></script>
 
-    <!-- Page Header -->
-    <header class="page-header" style="padding-top: calc(var(--space-2xl) + 60px);">
-        <div class="container">
-            <a href="../artistic.html" class="btn btn--small mb-lg">← Back to Gallery</a>
-            <p class="brutalist-subtitle mb-md">Audio-Visual</p>
-            <h1 class="page-header__title brutalist-title" style="font-size: clamp(2rem, 6vw, 4rem);">
-                Visual Sequencer
-            </h1>
-            <p class="page-header__subtitle">
-                2026 • TouchDesigner, VCV Rack
-            </p>
+    <main class="content">
+
+        <p class="crumbs"><a href="../index.html">home</a> / <a href="../artistic.html">artistic projects</a> / project title</p>
+
+        <header class="page-head">
+            <h1 class="page-title">Project Title</h1>
+            <p class="lede">2026 &middot; medium / category</p>
+        </header>
+
+        <table class="meta">
+            <tr><th scope="row">Year</th><td>2026</td></tr>
+            <tr><th scope="row">Medium</th><td>Digital / Generative</td></tr>
+            <tr><th scope="row">Tools</th><td>Processing, GLSL, etc.</td></tr>
+        </table>
+
+        <!-- main image (web-sized), linking to the full-resolution original -->
+        <figure>
+            <a href="../assets/artistic/project-hero.jpg">
+                <img src="../assets/thumbs/project-hero.jpg" alt="Project Title">
+            </a>
+            <figcaption>Caption. click image for full size.</figcaption>
+        </figure>
+
+        <!-- or a video: always give it a poster and preload="none" -->
+        <!--
+        <figure>
+            <video src="../assets/artistic/project.mov" poster="../assets/thumbs/project_poster.jpg" controls playsinline preload="none"></video>
+            <figcaption>Caption.</figcaption>
+        </figure>
+        -->
+
+        <h2>About this project</h2>
+        <p>
+            Write a description of your artistic project here. Explain the concept,
+            inspiration, and creative process behind the work.
+        </p>
+        <p>
+            Discuss the techniques, tools, and approaches you used. What challenges
+            did you face? What did you learn?
+        </p>
+
+        <h2>Process</h2>
+        <p>
+            Document your creative process here. Include sketches, iterations,
+            or behind-the-scenes details that show how the project evolved.
+        </p>
+
+        <h4>Sub-heading</h4>
+        <p>More text.</p>
+
+        <!-- two images side by side -->
+        <div class="pair">
+            <figure>
+                <img src="../assets/thumbs/project-01.jpg" alt="">
+                <figcaption>Image 1.</figcaption>
+            </figure>
+            <figure>
+                <img src="../assets/thumbs/project-02.jpg" alt="">
+                <figcaption>Image 2.</figcaption>
+            </figure>
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        
-        <!-- Hero Image -->
-        <section class="section--no-pad">
-            <div class="container container--wide">
-                <div class="art-block art-block--bordered" style="min-height: 60vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1a1a1a, #333);">
-                    <!-- Replace with your image -->
-                    <p class="text-mono" style="color: var(--color-muted);">Main project image goes here</p>
-                    <!-- <img src="../assets/artistic/project-name/hero.jpg" alt="Project Title" style="width: 100%; height: auto;"> -->
-                </div>
-            </div>
-        </section>
+        <nav class="pager" aria-label="Project navigation">
+            <a href="#">&laquo; prev: previous project</a>
+            <a href="#">next: next project &raquo;</a>
+        </nav>
 
-        <!-- Description -->
-        <section class="section">
-            <div class="container container--narrow">
-                <div class="grid grid--asym">
-                    <div>
-                        <h2 class="mb-lg">About This Project</h2>
-                        <p>
-                            Write a description of your artistic project here. Explain the concept, 
-                            inspiration, and creative process behind the work.
-                        </p>
-                        <p>
-                            Discuss the techniques, tools, and approaches you used. What challenges 
-                            did you face? What did you learn?
-                        </p>
-                        <p>
-                            Share the context and meaning behind the piece. What emotions or ideas 
-                            were you trying to convey?
-                        </p>
-                    </div>
-                    <div class="art-block art-block--dark">
-                        <h4 class="mb-md" style="color: var(--color-accent);">Details</h4>
-                        <p class="text-mono mb-sm" style="font-size: 0.85rem;">Year</p>
-                        <p class="mb-md" style="color: var(--color-muted);">2024</p>
-                        
-                        <p class="text-mono mb-sm" style="font-size: 0.85rem;">Medium</p>
-                        <p class="mb-md" style="color: var(--color-muted);">Digital / Generative</p>
-                        
-                        <p class="text-mono mb-sm" style="font-size: 0.85rem;">Tools</p>
-                        <p style="color: var(--color-muted);">Processing, GLSL, etc.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery -->
-        <section class="section art-block--dark">
-            <div class="container">
-                <h2 class="mb-xl text-center">Gallery</h2>
-                <div class="grid grid--3">
-                    <!-- Image 1 -->
-                    <div class="art-block art-block--bordered" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--color-bg);">
-                        <p class="text-mono text-muted">Image 1</p>
-                        <!-- <img src="../assets/artistic/project-name/01.jpg" alt=""> -->
-                    </div>
-                    <!-- Image 2 -->
-                    <div class="art-block art-block--bordered" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--color-bg);">
-                        <p class="text-mono text-muted">Image 2</p>
-                    </div>
-                    <!-- Image 3 -->
-                    <div class="art-block art-block--bordered" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--color-bg);">
-                        <p class="text-mono text-muted">Image 3</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process (Optional) -->
-        <section class="section">
-            <div class="container container--narrow">
-                <h2 class="mb-lg">Process</h2>
-                <p>
-                    Document your creative process here. Include sketches, iterations, 
-                    or behind-the-scenes details that show how the project evolved.
-                </p>
-                
-                <!-- Code snippet example -->
-                <div class="art-block art-block--dark mt-lg">
-                    <pre><code style="color: var(--color-text-light); font-size: 0.9rem;">
-// Example code snippet if relevant
-function createArt() {
-    // Your creative code here
-}
-                    </code></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- Navigation -->
-        <section class="section">
-            <div class="container">
-                <div class="flex flex--between">
-                    <a href="#" class="btn">← Previous Project</a>
-                    <a href="../artistic.html" class="btn">Back to Gallery</a>
-                    <a href="#" class="btn">Next Project →</a>
-                </div>
-            </div>
-        </section>
-
+        <div id="footer-placeholder"></div>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="footer__section">
-                    <h4 class="footer__title">Navigation</h4>
-                    <ul class="footer__links">
-                        <li><a href="../index.html" class="footer__link">Home</a></li>
-                        <li><a href="../projects.html" class="footer__link">Projects</a></li>
-                        <li><a href="../publications.html" class="footer__link">Publications</a></li>
-                        <li><a href="../experience.html" class="footer__link">Experience</a></li>
-                        <li><a href="../artistic.html" class="footer__link">Artistic</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer__section">
-                    <h4 class="footer__title">Connect</h4>
-                    <ul class="footer__links">
-                        <li><a href="mailto:stanciulescuandrei99@gmail.com" class="footer__link">Email</a></li>
-                        <li><a href="https://github.com/StanciulescuAndrei" class="footer__link" target="_blank" rel="noopener">GitHub</a></li>
-                        <li><a href="https://www.linkedin.com/in/stanciulescu-andrei/" class="footer__link" target="_blank" rel="noopener">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <p class="footer__copyright">
-                © 2024 Andrei Stanciulescu. Built with raw HTML & CSS.
-            </p>
-        </div>
-    </footer>
-
-    <!-- Mobile Nav Script -->
-    <script>
-        function toggleNav() {
-            document.getElementById('nav-links').classList.toggle('nav__links--open');
-        }
-    </script>
+</div>
 </body>
 </html>

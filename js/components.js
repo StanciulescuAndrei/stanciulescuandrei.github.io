@@ -1,128 +1,119 @@
-// Shared Navigation Component
-// Update the navigation here and it will reflect on all pages
+// ============================================================
+// Shared sidebar + footer.
+// Edit the lists below and every page updates.
+//
+// This script is loaded right after <div id="nav-placeholder">
+// so the sidebar is written before the rest of the page paints
+// (no flash, no layout jump). No animations, no dependencies.
+// ============================================================
 
-// Detect the base path by finding where components.js is loaded from
-function getBasePath() {
-    const scripts = document.getElementsByTagName('script');
-    for (let script of scripts) {
-        const src = script.getAttribute('src') || '';
-        if (src.includes('components.js')) {
-            // Extract the path before 'js/components.js'
-            const match = src.match(/^(.*?)js\/components\.js/);
+(function () {
+    'use strict';
+
+    // Path prefix to the site root, derived from where this script was loaded
+    // ('' for top-level pages, '../' for pages inside /artistic/).
+    function getBasePath() {
+        var scripts = document.getElementsByTagName('script');
+        for (var i = 0; i < scripts.length; i++) {
+            var src = scripts[i].getAttribute('src') || '';
+            var match = src.match(/^(.*?)js\/components\.js/);
             if (match) {
-                return match[1]; // e.g., '../' or '' or '../../'
+                return match[1];
             }
         }
+        return '';
     }
-    return '';
-}
 
-const navLinks = [
-    { href: "index.html", text: "Home", id: "home" },
-    { href: "artistic.html", text: "Artistic Projects", id: "artistic" },
-    { href: "projects.html", text: "Technical Projects", id: "projects" },
-    { href: "experience.html", text: "Experience", id: "experience" },
-    { href: "publications.html", text: "Publications", id: "publications" }
-];
+    var navLinks = [
+        { href: 'index.html', text: 'home', id: 'home' },
+        { href: 'artistic.html', text: 'artistic projects', id: 'artistic' },
+        { href: 'projects.html', text: 'technical projects', id: 'projects' },
+        { href: 'experience.html', text: 'experience', id: 'experience' },
+        { href: 'publications.html', text: 'publications', id: 'publications' }
+    ];
 
-function renderNavigation(activePageId) {
-    const basePath = getBasePath();
-    const navLinksHtml = navLinks.map(link => {
-        const isActive = link.id === activePageId;
-        const activeClass = isActive ? ' nav__link--active' : '';
-        return `<li><a href="${basePath}${link.href}" class="nav__link${activeClass}">${link.text}</a></li>`;
-    }).join('\n                ');
+    // Shown nested under "artistic projects".
+    var artisticLinks = [
+        { href: 'artistic/rains_of_the_anthropocene.html', text: 'rains of the anthropocene', id: 'rains' },
+        { href: 'artistic/rooted_structures.html', text: 'rooted structures', id: 'rooted' },
+        { href: 'artistic/visual_sequencer.html', text: 'visual sequencer', id: 'sequencer' }
+    ];
 
-    return `
-    <nav class="nav">
-        <div class="container nav__inner">
-            <a href="${basePath}index.html" class="nav__logo">A.S.</a>
-            <button class="nav__toggle" aria-label="Toggle navigation" onclick="toggleNav()">
-                <span class="nav__toggle-bar"></span>
-                <span class="nav__toggle-bar"></span>
-                <span class="nav__toggle-bar"></span>
-            </button>
-            <ul class="nav__links" id="nav-links">
-                ${navLinksHtml}
-            </ul>
-        </div>
-    </nav>`;
-}
+    var elsewhereLinks = [
+        { href: 'assets/resume.pdf', text: 'cv (pdf)', local: true },
+        { href: 'mailto:stanciulescuandrei99@gmail.com', text: 'email' },
+        { href: 'https://github.com/StanciulescuAndrei', text: 'github', external: true },
+        { href: 'https://www.linkedin.com/in/stanciulescu-andrei/', text: 'linkedin', external: true }
+    ];
 
-function injectNavigation(activePageId) {
-    const navPlaceholder = document.getElementById('nav-placeholder');
-    if (navPlaceholder) {
-        navPlaceholder.innerHTML = renderNavigation(activePageId);
+    var base = getBasePath();
+    var page = document.body.getAttribute('data-page') || 'home';
+    var sub = document.body.getAttribute('data-sub') || '';
+
+    function link(href, text, activeClass, extra) {
+        var cls = activeClass ? ' class="' + activeClass + '"' + (activeClass === 'is-active' ? ' aria-current="page"' : '') : '';
+        return '<a href="' + href + '"' + cls + (extra || '') + '>' + text + '</a>';
     }
-}
 
-// Navigation toggle function
-function toggleNav() {
-    document.getElementById('nav-links').classList.toggle('nav__links--open');
-}
+    function renderSidebar() {
+        var items = navLinks.map(function (l) {
+            var activeClass = '';
+            if (l.id === page && !sub) {
+                activeClass = 'is-active';
+            } else if (l.id === page && sub) {
+                activeClass = 'is-section';
+            }
+            var html = '<li>' + link(base + l.href, l.text, activeClass);
+            if (l.id === 'artistic') {
+                html += '<ul class="side-sub">' + artisticLinks.map(function (a) {
+                    return '<li>' + link(base + a.href, a.text, a.id === sub ? 'is-active' : '') + '</li>';
+                }).join('') + '</ul>';
+            }
+            return html + '</li>';
+        }).join('');
 
-// ============================================
-// Shared Footer Component
-// Update the footer here and it will reflect on all pages
-// ============================================
+        var elsewhere = elsewhereLinks.map(function (l) {
+            var href = l.local ? base + l.href : l.href;
+            var extra = l.external ? ' target="_blank" rel="noopener"' : '';
+            return '<li>' + link(href, l.text, '', extra) + '</li>';
+        }).join('');
 
-const footerNavLinks = [
-    { href: "index.html", text: "Home" },
-    { href: "artistic.html", text: "Artistic Projects" },
-    { href: "projects.html", text: "Technical Projects" },
-    { href: "experience.html", text: "Experience" },
-    { href: "publications.html", text: "Publications" }
-];
-
-const footerConnectLinks = [
-    { href: "mailto:stanciulescuandrei99@gmail.com", text: "Email", external: false },
-    { href: "https://github.com/StanciulescuAndrei", text: "GitHub", external: true },
-    { href: "https://www.linkedin.com/in/stanciulescu-andrei/", text: "LinkedIn", external: true }
-];
-
-const footerQuickLinks = [
-    { href: "assets/resume.pdf", text: "Download CV", external: false },
-    { href: "http://hdl.handle.net/2117/420313", text: "Master's Thesis", external: true }
-];
-
-function renderFooter() {
-    const basePath = getBasePath();
-    const navLinksHtml = footerNavLinks.map(link => 
-        `<li><a href="${basePath}${link.href}" class="footer__link">${link.text}</a></li>`
-    ).join('\n                        ');
-    
-    const connectLinksHtml = footerConnectLinks.map(link => {
-        const attrs = link.external ? ' target="_blank" rel="noopener"' : '';
-        return `<li><a href="${link.href}" class="footer__link"${attrs}>${link.text}</a></li>`;
-    }).join('\n                        ');
-    
-    const quickLinksHtml = footerQuickLinks.map(link => {
-        const attrs = link.external ? ' target="_blank" rel="noopener"' : '';
-        const href = link.external ? link.href : `${basePath}${link.href}`;
-        return `<li><a href="${href}" class="footer__link"${attrs}>${link.text}</a></li>`;
-    }).join('\n                        ');
-
-    return `
-    <footer class="footer">
-        <div class="container">
-            <p class="footer__copyright">
-                © ${new Date().getFullYear()} Andrei Stanciulescu. Built with raw HTML & CSS.
-            </p>
-        </div>
-    </footer>`;
-}
-
-function injectFooter() {
-    const footerPlaceholder = document.getElementById('footer-placeholder');
-    if (footerPlaceholder) {
-        footerPlaceholder.outerHTML = renderFooter();
+        return '' +
+            '<aside class="sidebar">' +
+                '<a href="' + base + 'index.html" class="logo">andrei<br>stanciulescu</a>' +
+                '<p class="tagline">graphics programmer<br>/ interactive art</p>' +
+                '<nav aria-label="Main">' +
+                    '<p class="side-head">index</p>' +
+                    '<ul class="side-nav">' + items + '</ul>' +
+                    '<p class="side-head">elsewhere</p>' +
+                    '<ul class="side-nav">' + elsewhere + '</ul>' +
+                '</nav>' +
+            '</aside>';
     }
-}
 
-// Initialize components when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the active page from the data attribute on body
-    const activePageId = document.body.dataset.page || 'home';
-    injectNavigation(activePageId);
-    injectFooter();
-});
+    function renderFooter() {
+        return '' +
+            '<footer class="footer">' +
+                '<p>&copy; ' + new Date().getFullYear() + ' Andrei Stanciulescu &middot; ' +
+                'hand-written HTML &amp; CSS &middot; no cookies, no tracking</p>' +
+            '</footer>';
+    }
+
+    var navEl = document.getElementById('nav-placeholder');
+    if (navEl) {
+        navEl.outerHTML = renderSidebar();
+    }
+
+    function injectFooter() {
+        var footEl = document.getElementById('footer-placeholder');
+        if (footEl) {
+            footEl.outerHTML = renderFooter();
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', injectFooter);
+    } else {
+        injectFooter();
+    }
+})();
